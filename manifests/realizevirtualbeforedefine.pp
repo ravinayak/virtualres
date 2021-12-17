@@ -1,5 +1,14 @@
 class virtualres::realizevirtualbeforedefine{
 
+
+  # realize before virtual resource is defined
+
+  realize File['/etc/defineprerealize.txt']
+
+  #Resource Collector collecting before definition of file
+
+  File <| tag == searchablefiles |>
+
   @file { '/etc/defineprerealize.txt':
     ensure => file,
   }
@@ -9,16 +18,12 @@ class virtualres::realizevirtualbeforedefine{
     owner  => 'vagrant',
     group  => 'vagrant',
     mode   => '0644',
-    tag    => 'defaultfiles'
+    tag    => 'defaultfiles, searchablefiles'
   }
 
   # If a virtual resource is defined before its realization, following 2 uce cases are possible:
   #   1. realize: If you use realize a resource before it is defined, it leads to a compilation failure
   #   2. Resource Collector: since this is based on search, if the resource is not defined before search is performed, nothing results
-
-  # realize before virtual resource is defined
-
-  realize File['/etc/defineaftersearch.txt']
 
   # resource collector before and after files are declared
 
