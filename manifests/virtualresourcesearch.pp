@@ -106,7 +106,9 @@ class virtualres::virtualresourcesearch {
   # User <| tag == searchable and tag ==virtualres and tag == virtualresourcesearch |> -> File <| tag == nonsearchable |>
 
   # Ordering here is based on the evaluation of code in order in which it is written
-  # Test Use Case 3: Resource Collectors without the use of any search expression
+  # Test Use Case 3: Resource Collectors without the use of any search expression, matches all instances of that resource in this file
+  # Here the ordering of Group and User is not specified, however, user autorequires a group, and therefore the order will be set 
+  # automatically
   # Must delete groups created above again before executing the following, delete users and files as well
 
   Group <| |>
