@@ -38,23 +38,27 @@ class virtualres::virtualresourcesearch {
 
   @user {'rescollectest-1':
     ensure => present,
-    tag    => 'nonsearchable'
+    tag    => 'nonsearchable',
+    gid    => 51005,
   }
   @user {'rescollectest-2':
     ensure => present,
-    tag    => 'nonsearchable'
+    tag    => 'nonsearchable',
+    gid    => 51006,
   }
   @user {'rescollectest-3':
     ensure => present,
-    tag    => 'nonsearchable'
+    tag    => 'nonsearchable',
+    gid    => 51007,
   }
   @user {'rescollectest-4':
     ensure => present,
-    tag    => 'searchable'
+    tag    => 'searchable',
+    gid    => 51008,
   }
   @user {'rescollectest-5':
     ensure => present,
-    tag    => 'searchable'
+    tag    => 'searchable',
   }
 
   @group {'rescollectgrouptest-1':
