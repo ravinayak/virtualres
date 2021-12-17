@@ -97,7 +97,7 @@ class virtualres::virtualresourcesearch {
   # Group <| tag == searchable and tag == nonsearchable or tag == "default" |>
   # -------------------------------------------------------------------------------------------
 
-  Group <| tag == searchable and tag == nonsearchable or tag == defaultfiles |>
+  Group <| tag == searchable or tag == nonsearchable or tag == defaultfiles |>
   User <| tag == nonsearchable and tag == virtualres |> -> File <| tag == searchable |>
   User <| tag == searchable and tag ==virtualres and tag == virtualresourcesearch |> -> File <| tag == nonsearchable |>
 
