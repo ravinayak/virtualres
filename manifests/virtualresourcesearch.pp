@@ -101,14 +101,16 @@ class virtualres::virtualresourcesearch {
   # Group <| tag == searchable and tag == nonsearchable or tag == "default" |>
   # -------------------------------------------------------------------------------------------
 
-  Group <| tag == searchable or tag == nonsearchable or tag == defaultfiles |>
-  User <| tag == nonsearchable and tag == virtualres |> -> File <| tag == searchable |>
-  User <| tag == searchable and tag ==virtualres and tag == virtualresourcesearch |> -> File <| tag == nonsearchable |>
+  # Group <| tag == searchable or tag == nonsearchable or tag == defaultfiles |>
+  # User <| tag == nonsearchable and tag == virtualres |> -> File <| tag == searchable |>
+  # User <| tag == searchable and tag ==virtualres and tag == virtualresourcesearch |> -> File <| tag == nonsearchable |>
 
+  # Ordering here is based on the evaluation of code in order in which it is written
+  # Test Use Case 3: Resource Collectors without the use of any search expression
   # Must delete groups created above again before executing the following, delete users and files as well
 
-  # Group <| |>
-  # User <| |> -> File <| |>
+  Group <| |>
+  User <| |> -> File <| |>
 
 
 }
