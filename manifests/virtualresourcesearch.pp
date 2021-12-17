@@ -60,18 +60,22 @@ class virtualres::virtualresourcesearch {
   @group {'rescollectgrouptest-1':
     ensure => present,
     gid    => 51005,
+    tag    => 'searchable',
   }
   @group {'rescollectgrouptest-2':
     ensure => present,
     gid    => 51006,
+    tag    => 'searchable',
   }
   @group {'rescollectgrouptest-3':
     ensure => present,
     gid    => 51007,
+    tag    => 'nonsearchable',
   }
   @group {'rescollectgrouptest-4':
     ensure => present,
     gid    => 51008,
+    tag    => 'nonsearchable',
   }
 
   # To run different versions of resource collectors for confirmation of its search parameters, destroy the resources created using
