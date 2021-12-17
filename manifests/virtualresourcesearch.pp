@@ -89,9 +89,11 @@ class virtualres::virtualresourcesearch {
 
   # Ordering here using operators: and + != . Delete the groups, users, files created above
   # Test Use Case 2: Resource Collectors using different operators for search
+  # default is a reserved word in Puppet and will throw an error if used without double quotes as shown below
+  # Group <| tag == searchable and tag == nonsearchable or tag == "default" |>
   # -------------------------------------------------------------------------------------------
 
-  Group <| tag == searchable and tag == nonsearchable or tag == default |>
+  Group <| tag == searchable and tag == nonsearchable or tag == defaultfiles |>
   User <| tag == nonsearchable and tag == virtualres |> -> File <| tag == searchable |>
   User <| tag == searchable and tag ==virtualres and tag == virtualresourcesearch |> -> File <| tag == nonsearchable |>
 
