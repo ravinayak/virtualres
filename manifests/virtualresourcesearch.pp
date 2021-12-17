@@ -81,15 +81,19 @@ class virtualres::virtualresourcesearch {
   # sudo rm -rf /etc/rescollecttest*
 
   # Ordering relationships defined below pick specific users on which files depend for creation. Those users are owners of files
-  Group <| tag == searchable or tag == non-searchable |>
-  User <| tag == nonsearchable |> -> File <| tag == searchable |>
-  User <| tag == searchable |> -> File <| tag == nonsearchable |>
+  # Test Use Case 1: Resource Collectors independently chained
+  # -------------------------------------------------------------------------------------------
+  # Group <| tag == searchable or tag == non-searchable |>
+  # User <| tag == nonsearchable |> -> File <| tag == searchable |>
+  # User <| tag == searchable |> -> File <| tag == nonsearchable |>
 
   # Ordering here using operators: and + != . Delete the groups, users, files created above
+  # Test Use Case 2: Resource Collectors using different operators for search
+  # -------------------------------------------------------------------------------------------
 
-  # Group <| tag == searchable and tag == nonsearchable or tag == default |>
-  # User <| tag == nonsearchable and tag == virtualres |> -> File <| tag == searchable |>
-  # User <| tag == searchable and tag ==virtualres and tag == virtualresourcesearch |> -> File <| tag == nonsearchable |>
+  Group <| tag == searchable and tag == nonsearchable or tag == default |>
+  User <| tag == nonsearchable and tag == virtualres |> -> File <| tag == searchable |>
+  User <| tag == searchable and tag ==virtualres and tag == virtualresourcesearch |> -> File <| tag == nonsearchable |>
 
   # Must delete groups created above again before executing the following, delete users and files as well
 
