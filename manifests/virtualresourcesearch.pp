@@ -52,7 +52,7 @@ class virtualres::virtualresourcesearch {
     ensure => present,
     tag    => 'searchable'
   }
-  @user {'rescollectest-4':
+  @user {'rescollectest-5':
     ensure => present,
     tag    => 'searchable'
   }
