@@ -1,34 +1,34 @@
 class virtualres::virtualresourcesearch {
 
-  @file {'/etc/rescollectest-1.txt':
+  @file {'/codetestfiles/rescollectest-1.txt':
     ensure => file,
     owner  => 'rescollectest-1',
     group  => 'root',
     mode   => '0644',
     tag    => 'searchable'
   }
-  @file {'/etc/rescollectest-2.txt':
+  @file {'/codetestfiles/rescollectest-2.txt':
     ensure => file,
     owner  => 'rescollectest-2',
     group  => 'root',
     mode   => '0644',
     tag    => 'searchable'
   }
-  @file {'/etc/rescollectest-3.txt':
+  @file {'/codetestfiles/rescollectest-3.txt':
     ensure => file,
     owner  => 'rescollectest-3',
     group  => 'root',
     mode   => '0644',
     tag    => 'searchable'
   }
-  @file {'/etc/rescollectest-4.txt':
+  @file {'/codetestfiles/rescollectest-4.txt':
     ensure => file,
     owner  => 'rescollectest-4',
     group  => 'root',
     mode   => '0644',
     tag    => 'nonsearchable'
   }
-  @file {'/etc/rescollectest-5.txt':
+  @file {'/codetestfiles/rescollectest-5.txt':
     ensure => file,
     owner  => 'rescollectest-5',
     group  => 'root',
@@ -86,7 +86,7 @@ class virtualres::virtualresourcesearch {
   # following bash commands:
   # sudo groupdel rescollectgrouptest-1 rescollectgrouptest-2 rescollectgrouptest-3 rescollectgrouptest-4
   # sudo userdel rescollectest-1 rescollectest-2 rescollectest-3 rescollectest-4 rescollectest-5
-  # sudo rm -rf /etc/rescollecttest*
+  # sudo rm -rf /codetestfiles/rescollecttest*
 
   # Ordering relationships defined below pick specific users on which files depend for creation. Those users are owners of files
   # Test Use Case 1: Resource Collectors independently chained

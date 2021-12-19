@@ -1,19 +1,10 @@
 class virtualres::realizevirtualbeforedefine{
 
-
-  # realize before virtual resource is defined
-
-  realize File['/etc/defineprerealize.txt']
-
-  #Resource Collector collecting before definition of file
-
-  File <| tag == searchablefiles |>
-
-  @file { '/etc/defineprerealize.txt':
+  @file { '/codetestfiles/defineprerealize.txt':
     ensure => file,
   }
 
-  @file { '/etc/definebeforesearch.txt':
+  @file { '/codetestfiles/definebeforesearch.txt':
     ensure => file,
     owner  => 'vagrant',
     group  => 'vagrant',
@@ -38,9 +29,9 @@ class virtualres::realizevirtualbeforedefine{
 
   # realize post declaration of virtual resource
 
-  realize File['/etc/definebeforesearch.txt']
+  realize File['/codetestfiles/definebeforesearch.txt']
 
-  @file {'/etc/defineaftersearch.txt':
+  @file {'/codetestfiles/defineaftersearch.txt':
     ensure => file,
     owner  => 'vagrant',
     group  => 'vagrant',
@@ -48,7 +39,7 @@ class virtualres::realizevirtualbeforedefine{
     tag    => 'defaultfiles',
   }
 
-  @file {'/etc/definepostrealize.txt':
+  @file {'/codetestfiles/definepostrealize.txt':
     ensre => file,
   }
 }

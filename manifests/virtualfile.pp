@@ -1,6 +1,6 @@
 class virtualres::virtualfile{
   # Contains virtual files
-  @file{'/etc/virtualfile.txt':
+  @file{'/codetestfiles/virtualfile.txt':
     ensure  => file,
     owner   => 'neo5',
     group   => 'neo5',
@@ -9,7 +9,7 @@ class virtualres::virtualfile{
     tag     => 'virtualfiles'
   }
 
-  @file{'/etc/virtualexecfile.txt':
+  @file{'/codetestfiles/virtualexecfile.txt':
     ensure => file,
     owner  => 'vagrant',
     group  => 'vagrant',
