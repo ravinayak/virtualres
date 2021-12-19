@@ -1,6 +1,6 @@
 class virtualres::virtualuser {
-  @user{'neo5':
+  @user{'neo555':
     ensure => present,
-    tag    => 'neo5'
+    tag    => 'neo55'
   }
 }

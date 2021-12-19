@@ -2,8 +2,8 @@ class virtualres::virtualfile{
   # Contains virtual files
   @file{'/codetestfiles/virtualfile.txt':
     ensure  => file,
-    owner   => 'neo5',
-    group   => 'neo5',
+    owner   => 'neo55',
+    group   => 'neo55',
     content => 'this is a virtual file - with contents and is read only',
     mode    => '0644',
     tag     => 'virtualfiles'
